@@ -58,8 +58,9 @@ namespace CompanyCoreLib
             foreach (DateTime monthDate in numberDates)
             {
                 DateTime firstDayOfMonth = new DateTime(monthDate.Year, monthDate.Month, 1);
-                //string correctFormat = firstDayOfMonth.ToString("yyyy-MM-dd HH:mm");
-                popularMonths.Add(firstDayOfMonth);
+                string correctFormat = firstDayOfMonth.ToString("yyyy-MM-dd HH:mm");
+                var datatime = DateTime.Parse(correctFormat);
+                popularMonths.Add(datatime);
             }
             #endregion
             return popularMonths;
