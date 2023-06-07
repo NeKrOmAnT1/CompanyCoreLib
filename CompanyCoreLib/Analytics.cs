@@ -55,7 +55,7 @@ namespace CompanyCoreLib
 
             #region Формирование списка в нужном мне формате
             List<DateTime> popularMonths = new List<DateTime>();
-            foreach (DateTime monthDate in numberDates)
+            foreach (DateTime monthDate in numberDates.ToList().OrderBy(x => x.Year))
             {
                 DateTime firstDayOfMonth = new DateTime(monthDate.Year, monthDate.Month, 1);
                 string correctFormat = firstDayOfMonth.ToString("yyyy-MM-dd HH:mm");
